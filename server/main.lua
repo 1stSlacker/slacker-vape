@@ -4,7 +4,7 @@ for _, juice in pairs(Config.VapeJuices) do
     QBCore.Functions.CreateUseableItem(juice, function(source, item)
         local Player = QBCore.Functions.GetPlayer(source)
         if Player.Functions.GetItemByName(Config.VapeItem) then
-            TriggerClientEvent('slacker-vape:useVapeJuice', source, juice)
+            TriggerClientEvent('exquisite-vapev2:useVapeJuice', source, juice)
         else
             TriggerClientEvent('QBCore:Notify', source, 'You need a vape to use this item.', 'error')
         end
@@ -12,8 +12,8 @@ for _, juice in pairs(Config.VapeJuices) do
 end
 
 -- Event to remove the vape juice item upon completion
-RegisterNetEvent('slacker-vape:removeVapeJuice')
-AddEventHandler('slacker-vape:removeVapeJuice', function(juice)
+RegisterNetEvent('exquisite-vapev2:removeVapeJuice')
+AddEventHandler('exquisite-vapev2:removeVapeJuice', function(juice)
     local Player = QBCore.Functions.GetPlayer(source)
     Player.Functions.RemoveItem(juice, 1)
 end)

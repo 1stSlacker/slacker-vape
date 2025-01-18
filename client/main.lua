@@ -1,7 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-RegisterNetEvent('slacker-vape:useVapeJuice')
-AddEventHandler('slacker-vape:useVapeJuice', function(juiceType)
+RegisterNetEvent('exquisite-vapev2:useVapeJuice')
+AddEventHandler('exquisite-vapev2:useVapeJuice', function(juiceType)
     local playerPed = PlayerPedId()
     local armorAmount = math.random(Config.ArmorAmountMin, Config.ArmorAmountMax)
     -- Start the vape emote
@@ -18,7 +18,7 @@ AddEventHandler('slacker-vape:useVapeJuice', function(juiceType)
         -- Stop the vape emote and play the completion emote
         exports["rpemotes"]:EmoteCommandStart('c')
         -- Remove the vape juice item
-        TriggerServerEvent('slacker-vape:removeVapeJuice', juiceType)
+        TriggerServerEvent('exquisite-vapev2:removeVapeJuice', juiceType)
 		TriggerEvent('qb-inventory:client:ItemBox', QBCore.Shared.Items[juiceType], "remove") -- Show item removal box
     end, function() -- Cancel
         exports["rpemotes"]:EmoteCommandStart('c')
